@@ -1,0 +1,119 @@
+<mvc:View 
+	xmlns:f="sap.f"
+	xmlns:card="sap.f.cards"
+	xmlns:tnt="sap.tnt"
+	xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="ui5.workshop.controller.Info">
+	<App>
+		<pages>
+			<Page title="Product Info">
+				<content>
+					<Panel xmlns="sap.m" width="auto" expandable="true" expanded="true" id="panel0">
+						<headerToolbar>
+							<Toolbar id="toolbar1">
+								<Title text="Image"/>
+								<ToolbarSpacer/>
+								<Button icon="sap-icon://settings"/>
+							</Toolbar>
+						</headerToolbar>
+						<content>
+							<Image src="{ path: 'Name', formatter: '.formatter.pictureURL' }" width="100%" id="image0"/>
+						</content>
+					</Panel>
+					<f:GridContainer id="demoGrid" class="sapUiSmallMargin">
+						<f:layout>
+							<f:GridContainerSettings rowSize="5rem" columnSize="5rem" gap="1rem" />
+						</f:layout>
+						<f:layoutS>
+							<f:GridContainerSettings rowSize="4.25rem" columnSize="4.25rem" gap="0.75rem" />
+						</f:layoutS>
+						<f:items>
+							<GenericTile header="Sales Fulfillment Application Title" subheader="Subtitle">
+								<layoutData>
+									<f:GridContainerItemLayoutData minRows="2" columns="2" />
+								</layoutData>
+								<TileContent unit="EUR" footer="Current Quarter">
+									<ImageContent src="sap-icon://home-share" />
+								</TileContent>
+							</GenericTile>
+
+							<GenericTile header="Manage Activity Master Data Type" subheader="Subtitle">
+								<layoutData>
+									<f:GridContainerItemLayoutData minRows="2" columns="2" />
+								</layoutData>
+								<TileContent>
+									<ImageContent src="sap-icon://activities" />
+								</TileContent>
+							</GenericTile>
+
+							<GenericTile header="Purchose Order requisitions" subheader="Subtitle">
+								<layoutData>
+									<f:GridContainerItemLayoutData minRows="2" columns="2" />
+								</layoutData>
+								<TileContent>
+									<ImageContent src="sap-icon://nutrition-activity" />
+								</TileContent>
+							</GenericTile>
+
+							<f:Card width="100%">
+								<f:layoutData>
+									<f:GridContainerItemLayoutData minRows="2" columns="4" />
+								</f:layoutData>
+								<f:header>
+									<card:Header title="Customers" subtitle="This product was bought by"/>
+								</f:header>
+								<f:content>
+									<List showSeparators="None" items="{path: '/ContactSet'}" growing="true" growingThreshold="4">
+										<CustomListItem>
+											<HBox alignItems="Center" justifyContent="SpaceBetween">
+												<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+													<Title level="H3" text="{FirstName} {LastName}"/>
+													<Text text="{EmailAddress}"/>
+													<Text text="{Address/City}"/>
+												</VBox>
+												<tnt:InfoLabel class="sapUiTinyMargin" text="{BusinessPartnerID}" colorScheme="{      path: 'BusinessPartnerID',      formatter: '.formatter.deliveryStatus'     }"/>
+											</HBox>
+										</CustomListItem>
+									</List>
+								</f:content>
+							</f:Card>
+
+							<GenericTile header="Cumulative Totals" subheader="Subtitle">
+								<layoutData>
+									<f:GridContainerItemLayoutData minRows="2" columns="2" />
+								</layoutData>
+								<TileContent unit="Unit" footer="Footer Text">
+									<NumericContent value="12" />
+								</TileContent>
+							</GenericTile>
+
+							<GenericTile header="Travel and Expenses" subheader="Access Concur">
+								<layoutData>
+									<f:GridContainerItemLayoutData minRows="2" columns="2" />
+								</layoutData>
+								<TileContent>
+									<ImageContent src="sap-icon://travel-expense" />
+								</TileContent>
+							</GenericTile>
+						</f:items>
+					</f:GridContainer>
+					<IconTabBar selectedKey="__filter0" id="bar0">
+						<items>
+							<IconTabFilter text="Orders" count="22" showAll="true" id="filter0">
+								<content>
+									<List noDataText="No data" id="list0">
+										<items>
+											<StandardListItem title="List Item 1" id="item0"/>
+											<StandardListItem title="List Item 2" id="item1"/>
+											<StandardListItem title="List Item 3" id="item2"/></items>
+									</List>
+								</content>
+							</IconTabFilter>
+							<IconTabFilter text="Open" count="10" icon="sap-icon://task" iconColor="Critical" id="filter1"/>
+							<IconTabFilter text="Shipped" count="5" icon="sap-icon://shipping-status" iconColor="Positive" id="filter2"/></items>
+					</IconTabBar>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
