@@ -8,7 +8,7 @@ Code repository for the UI5 Workshop on June 12th - check the prerequisites and 
 If you like to learn UI5, check out the openSAP courses [Developing Web Apps With SAPUI5](https://open.sap.com/courses/ui51) and [Evolved Web Apps With SAPUI5](https://open.sap.com/courses/ui52).
 You can also find a lot more information on [SAPUI5](https://ui5.sap.com) and [OpenUI5](https://openui5.org) on our official info pages.
 
-## Prerequisites (only step 2+3 is needed needed for internal users)
+## Prerequisites
 
 1. [Create a trial account](https://developers.sap.com/germany/tutorials/hcp-create-trial-account.html) on the SAP Hana Cloud Platform. You can also re-use an existing account.
 
